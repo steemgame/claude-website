@@ -10,6 +10,11 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
+  // Inject basePath so imgPath() helper can read it in ALL components
+  // (server, client, and static generation contexts)
+  env: {
+    NEXT_PUBLIC_BASE_PATH: basePath,
+  },
 };
 
 export default nextConfig;
