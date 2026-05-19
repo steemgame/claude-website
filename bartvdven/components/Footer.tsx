@@ -1,6 +1,6 @@
 import Link from "next/link";
-import Image from "next/image";
 import { Phone, Mail, MapPin } from "lucide-react";
+import { imgPath } from "@/lib/imgPath";
 
 export default function Footer() {
   return (
@@ -10,8 +10,8 @@ export default function Footer() {
           {/* Branding met echt logo */}
           <div>
             <Link href="/">
-              <Image
-                src="/images/logo.png"
+              <img
+                src={imgPath("/images/logo.png")}
                 alt="Bart van de Ven – Allround Timmerwerken en Montage"
                 width={240}
                 height={80}

@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
+import { imgPath } from "@/lib/imgPath";
 
 const categories = [
   "Alles",
@@ -152,11 +152,10 @@ export default function ProjectenPage() {
                 <div className="rounded-lg overflow-hidden border border-grey-light bg-white group hover:shadow-lg transition-shadow duration-300 h-full flex flex-col">
                   <div className="relative h-52 overflow-hidden">
                     {p.real ? (
-                      <Image
-                        src={p.image}
+                      <img
+                        src={imgPath(p.image)}
                         alt={p.title}
-                        fill
-                        className="object-cover group-hover:scale-105 transition-transform duration-500"
+                        className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                       />
                     ) : (
                       <img

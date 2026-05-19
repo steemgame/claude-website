@@ -1,6 +1,6 @@
 import Link from "next/link";
-import Image from "next/image";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
+import { imgPath } from "@/lib/imgPath";
 import {
   DoorOpen,
   SunDim,
@@ -77,8 +77,8 @@ export default function HomePage() {
           {/* Beeldmerk */}
           <div className="flex justify-center mb-6">
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-3 border border-white/20">
-              <Image
-                src="/images/beeldmerk.jpg"
+              <img
+                src={imgPath("/images/beeldmerk.jpg")}
                 alt="Bart van de Ven beeldmerk"
                 width={64}
                 height={64}
@@ -168,8 +168,8 @@ export default function HomePage() {
                 />
                 {/* Logo badge over de foto */}
                 <div className="absolute -bottom-5 -right-4 bg-white px-5 py-3 rounded-lg shadow-xl flex items-center gap-3">
-                  <Image
-                    src="/images/beeldmerk.jpg"
+                  <img
+                    src={imgPath("/images/beeldmerk.jpg")}
                     alt="Beeldmerk"
                     width={40}
                     height={40}
@@ -276,11 +276,10 @@ export default function HomePage() {
               <AnimateOnScroll key={p.title} delay={i * 100}>
                 <div className="rounded-lg overflow-hidden border border-grey-light bg-white group hover:shadow-lg transition-shadow duration-300">
                   <div className="relative h-64 overflow-hidden">
-                    <Image
-                      src={p.image}
+                    <img
+                      src={imgPath(p.image)}
                       alt={p.title}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute top-3 left-3 bg-blue text-white text-xs px-3 py-1 rounded-full font-medium">
                       {p.category}
@@ -340,8 +339,8 @@ export default function HomePage() {
           <AnimateOnScroll>
             {/* Logo wit in CTA blok */}
             <div className="flex justify-center mb-7">
-              <Image
-                src="/images/logo.png"
+              <img
+                src={imgPath("/images/logo.png")}
                 alt="Bart van de Ven"
                 width={220}
                 height={73}

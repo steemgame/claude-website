@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import { Phone, Mail, MapPin, Clock, Send, CheckCircle } from "lucide-react";
+import { imgPath } from "@/lib/imgPath";
 
 export default function ContactPage() {
   const [form, setForm] = useState({ naam: "", telefoon: "", email: "", omschrijving: "" });
@@ -138,8 +138,8 @@ export default function ContactPage() {
               <div className="bg-charcoal rounded-xl p-7 text-white">
                 {/* Logo in contact blok */}
                 <div className="mb-6 pb-5 border-b border-white/10">
-                  <Image
-                    src="/images/logo.png"
+                  <img
+                    src={imgPath("/images/logo.png")}
                     alt="Bart van de Ven"
                     width={180}
                     height={60}

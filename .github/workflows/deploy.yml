@@ -36,6 +36,7 @@ jobs:
         working-directory: bartvdven
         run: npm run build
         env:
+          NEXT_PUBLIC_BASE_PATH: /claude-website
           NEXT_BASE_PATH: /claude-website
 
       - name: Upload Pages artifact

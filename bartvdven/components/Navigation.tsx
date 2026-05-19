@@ -2,9 +2,9 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
+import { imgPath } from "@/lib/imgPath";
 
 const links = [
   { href: "/", label: "Home" },
@@ -38,8 +38,8 @@ export default function Navigation() {
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group">
-            <Image
-              src="/images/beeldmerk.jpg"
+            <img
+              src={imgPath("/images/beeldmerk.jpg")}
               alt="Bart van de Ven beeldmerk"
               width={44}
               height={44}
@@ -50,7 +50,7 @@ export default function Navigation() {
                 Bart van de Ven
               </span>
               <span className="text-white/55 text-xs tracking-wide">
-                Timmerwerken & Montage
+                Timmerwerken &amp; Montage
               </span>
             </div>
           </Link>
@@ -85,7 +85,6 @@ export default function Navigation() {
         </div>
       </div>
 
-      {/* Mobile menu */}
       {isOpen && (
         <div className="md:hidden bg-charcoal border-t border-white/10">
           <nav className="flex flex-col px-4 py-4 gap-1">
