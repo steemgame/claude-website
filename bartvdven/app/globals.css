@@ -1,42 +1,40 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-charcoal: #2b2b2b;
-  --color-charcoal-light: #3d3d3d;
-  --color-cream: #f5f0e8;
-  --color-cream-dark: #ede7da;
-  --color-gold: #c47d0e;
-  --color-gold-dark: #9a6108;
-  --color-gold-light: #d4941a;
+  /* Brand colors — derived from the bartvdven.nl logo */
+  --color-blue:        #1d7ec4;
+  --color-blue-dark:   #155e96;
+  --color-blue-light:  #2e92d9;
+  --color-blue-pale:   #e8f3fb;
+
+  --color-charcoal:    #1a1a1a;
+  --color-grey:        #5a5a5a;
+  --color-grey-mid:    #8a8a8a;
+  --color-grey-light:  #f0f0f0;
+  --color-offwhite:    #f7f7f7;
 
   --font-display: var(--font-playfair), Georgia, serif;
-  --font-sans: var(--font-lato), system-ui, sans-serif;
+  --font-sans:    var(--font-lato), system-ui, sans-serif;
 }
 
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
-  background-color: var(--color-cream);
+  background-color: var(--color-offwhite);
   color: var(--color-charcoal);
   font-family: var(--font-sans);
 }
 
+/* Scroll animations */
 .fade-up {
   opacity: 0;
   transform: translateY(28px);
   transition: opacity 0.65s ease, transform 0.65s ease;
 }
-.fade-up.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
+.fade-up.visible { opacity: 1; transform: translateY(0); }
 
 .fade-in {
   opacity: 0;
   transition: opacity 0.65s ease;
 }
-.fade-in.visible {
-  opacity: 1;
-}
+.fade-in.visible { opacity: 1; }
